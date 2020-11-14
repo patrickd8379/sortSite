@@ -82,10 +82,10 @@ def linearSearch():
     while found == False and i < len(linearList):
         if linearList[i] == linearValue:
             found == True
-            return "Your number is in position", i+1, "in the list"
+            return "True"
         else:
             i += 1
-    return "Number not in list"
+    return "False"
 
 @app.route('/binary')
 def binary():
@@ -106,9 +106,9 @@ def binarySearch(binaryList, binaryValue, oap):
         binaryList[i] = int(binaryList[i])
     if len(binaryList) == 1:
         if binaryValue == binaryList:
-            return "Your number is the only one in the list"
+            return "True"
         else:
-            return "Number not found"
+            return "False"
     mid = int(len(binaryList) / 2)
     left = binaryList[:mid]
     right = binaryList[mid:]
@@ -118,4 +118,4 @@ def binarySearch(binaryList, binaryValue, oap):
         oap += (len(binaryList)-mid)
         binarySearch(right, binaryValue, oap)
     else:
-        return "Your number is at position", (mid+oap), "in the list"
+        return "True"
